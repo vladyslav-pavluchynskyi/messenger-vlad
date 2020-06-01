@@ -1,0 +1,126 @@
+.container .header {
+    height: 64px;
+    background-color: #171b20;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+    color: #ffffff;
+    justify-content: space-between;
+}
+
+.container .header ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.container .header .navigation {
+    margin: 0 0 0 34px;
+}
+
+.container .header .navigation li {
+    cursor: pointer;
+    margin: 0 20px 0 0;
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+}
+
+.container .header li:hover {
+    color: #b7b7b7;
+}
+
+.container .header li {
+    cursor: pointer;
+}
+
+.container .header .navigation li:nth-child(4) {
+    box-shadow: inset 0 -2px 0 0 #24cf5f;
+}
+
+.container .header .icon-bar {
+    margin-right: 32px;
+}
+
+.container .header .icon-bar li {
+    margin: 0 24px 0 0;
+    border: solid 1px rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container .header .icon-bar li:nth-child(4) {
+    margin: 0;
+}
+
+.container .header .icon-bar li:nth-child(1):after,
+.container .header .icon-bar li:nth-child(2):after{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    border-radius: 50%;
+    top: -6px;
+    right: -4px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .header .icon-bar li:nth-child(2):after {
+    content: "28";
+    background-color: #24cf5f;
+
+}
+.container .header .icon-bar li:nth-child(1):after {
+    content: "10";
+    background-color: #e62c2c;
+}
+
+.container .header .icon-bar li i:before {
+    font-size: 18px;
+    margin: 0;
+}
+
+.container .header .icon-bar li i {
+    height: 18px;
+    width: 18px;
+    margin: 0;
+}
+
+.container .header .corner-head {
+    display: inline-flex;
+}
+
+.container .header .corner-head .user-corner .user-photo {
+    background-color: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-image: url("images/raichel.jpg");
+    background-repeat: no-repeat;
+}
+
+.container .header .corner-head .user-corner {
+    display: flex;
+    line-height: 2;
+    margin: auto 32px auto auto;
+}
+
+.container .header .corner-head .user-corner p {
+    cursor: default;
+    user-select: none;
+    margin: 0 15px 0 0;
+}
