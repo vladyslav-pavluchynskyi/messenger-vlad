@@ -1,0 +1,102 @@
+.container .content .team-list {
+    min-width: 240px;
+    background-color: rgba(23, 26, 30, 0.9);
+    flex: 1 0 17%;
+    overflow-y: auto;
+    padding-top: 18px;
+}
+
+.container .content .team-list ul {
+    margin: 18px 0 0 0;
+}
+
+.container .content .team-list .flex-between-item, .container .content .team-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding: 6px 18px 6px 32px;
+    cursor: pointer;
+}
+
+.container .content .team-list .flex-between-item {
+    padding: 0 18px 6px 32px;
+}
+
+.container .content .team-list .flex-between-item {
+    margin-bottom: 34px;
+}
+
+.container .content .team-list li.flex-between-item {
+    background-color: unset;
+    cursor: default;
+}
+
+.container .content .team-list li.flex-between-item:hover {
+    background-color: unset;
+}
+
+.container .content .team-list li.flex-between-item p:before {
+    content: '';
+}
+
+.container .content .team-list li:hover {
+    background-color: #2a2a2a
+}
+
+.container .content .team-list .flex-between-item span i:before {
+    margin: 0;
+}
+
+.container .content .team-list .flex-between-item span .flaticon-add {
+    width: 16px;
+    height: 18px;
+}
+
+.container .content .team-list .flex-between-item span .flaticon-add-1 {
+    width: 10px;
+    height: 22px;
+}
+
+.container .content .team-list .flex-between-item span .flaticon-add:before {
+    font-size: 15px;
+}
+
+.container .content .team-list .flex-between-item span .flaticon-add-1:before {
+    font-size: 10px;
+}
+
+.container .content .team-list ul {
+    list-style-type: none;
+    padding: 0;
+    user-select: none;
+}
+
+.container .content .team-list ul li p {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #5f6773;
+    margin: 0;
+    padding: 0;
+}
+
+.container .content .team-list ul.group li:nth-child(1) p {
+    color: #ffffff;
+}
+
+.container .content .team-list ul.group li:nth-child(1) {
+    background-color: rgba(23, 26, 30, 0.9);
+}
+
+.container .content .team-list ul li p:before {
+    content: '#';
+}
+
+.container .content .team-list ul li span {
+    text-align: left;
+    color: #ffffff;
+    min-width: 20px;
+}

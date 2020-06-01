@@ -1,0 +1,123 @@
+
+.container .content .user-info {
+    overflow-y: auto;
+    min-width: 220px;
+    flex: 1 0 16%;
+    background-color: #14171a;
+}
+
+.container .content .user-info .top-user-info {
+    justify-content: center;
+    display: flex;
+    height: 181px;
+    align-items: center;
+}
+
+.container .content .user-info .top-user-info .user-container .photo {
+    margin: 0 0 16px 0;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
+}
+
+.container .content .user-info .top-user-info .user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .content .user-info .grey-text {
+    opacity: 0.9;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    color: #80878f;
+}
+
+.container .content .user-info .white-text {
+    opacity: 0.9;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+
+}
+
+.container .content .user-info .user-container .grey-text {
+    line-height: 1.29;
+}
+
+.container .content .user-info .user-container .white-text {
+    margin-bottom: 4px;
+    font-weight: 500;
+    line-height: 1.29;
+}
+
+.container .content .user-info .register-info, .container .content .user-info .personal-data {
+    display: flex;
+    flex-direction: column;
+    opacity: 0.9;
+    box-shadow: inset 0 -1px 0 0 rgba(90, 95, 101, 0.5);
+}
+
+.container .content .user-info .register-info {
+    margin: 26px 23px 27px 24px;
+}
+
+.container .content .user-info .personal-data {
+    margin: 26px 24px 24px 24px;
+}
+
+.container .content .user-info .register-info div, .container .content .user-info .personal-data div {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .user-info .register-info .email {
+    margin-bottom: 17px;
+}
+
+.container .content .user-info .register-info .nickname {
+    margin-bottom: 22px;
+}
+
+.container .content .user-info .register-info .phone-number {
+    margin-bottom: 27px;
+}
+
+.container .content .user-info .register-info, .container .content .user-info .personal-data .grey-text {
+    margin-bottom: 4px;
+    line-height: 1.43;
+}
+
+.container .content .user-info .register-info, .container .content .user-info .personal-data .white-text {
+    line-height: 1.43;
+}
+
+.container .content .user-info .personal-data .date-of-birth {
+    margin-bottom: 21px;
+}
+
+.container .content .user-info .personal-data .gender,
+.container .content .user-info .personal-data .languages {
+    margin-bottom: 17px;
+}
+
+.container .content .user-info .personal-data .green-text {
+    opacity: 0.9;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    color: #25c14a;
+    margin-bottom: 24px;
+    cursor: pointer;
+    user-select: none;
+}
