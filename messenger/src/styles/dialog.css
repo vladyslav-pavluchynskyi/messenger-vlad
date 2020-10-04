@@ -25,11 +25,11 @@
     padding-left: 61px;
 }
 .container .content .dialog .messages .my .photo {
-    background-image: url("images/drawn.jpg");
+    /*background-image: url("images/drawn.jpg");*/
 }
 
 .container .content .dialog .messages .opponent .photo {
-    background-image: url("images/steph.jpg");
+    /*background-image: url("images/steph.jpg");*/
 }
 
 .container .content .dialog .messages .replica {
