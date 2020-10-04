@@ -7,8 +7,7 @@
   "sourceType": "module",
   "scripts": {
     "webpack": "webpack index.js",
-    "start:dev": "webpack index.js && webpack-dev-server --open messenger.html",
-    "start": "npm run open",
+    "start": "npm run webpack && npm run open",
     "open": "webpack index.js && concurrently \"http-server -a localhost -p 3000\" \"open http://localhost:3000/messenger.html\""
   },
   "author": "",
