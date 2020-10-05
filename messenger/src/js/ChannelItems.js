@@ -52,6 +52,7 @@ export class ChannelItems {
             const personal = personals[0];
             personal.innerHTML = '';
             personal.appendChild(ul);
+            ul.children[0].click();
         }
 
         this.personList.forEach(renderPerson);

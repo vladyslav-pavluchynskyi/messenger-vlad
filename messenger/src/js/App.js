@@ -19,7 +19,6 @@ export default class App {
 
     render() {
         const ul = renderUl('group');
-
         function renderProductList(element) {
             const li = createLi();
             const p = renderElement('p');
@@ -39,6 +38,7 @@ export default class App {
 
         const elementsByClassName = document.getElementsByClassName('team-list');
         elementsByClassName[0].appendChild(ul);
+        ul.children[0].click();
     }
 
 }

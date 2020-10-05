@@ -11,7 +11,9 @@ export function setPhoto(el, url) {
 
 export function renderElement(block, className) {
     const blockElement = document.createElement(block);
-    blockElement.setAttribute('class', className);
+    if (className) {
+        blockElement.setAttribute('class', className);
+    }
     return blockElement;
 }
 
