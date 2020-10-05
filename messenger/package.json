@@ -8,7 +8,7 @@
   "scripts": {
     "webpack": "webpack index.js",
     "start": "npm run webpack && npm run open",
-    "open": "webpack index.js && concurrently \"http-server -a localhost -p 3000\" \"open http://localhost:3000/messenger.html\""
+    "open": "webpack index.js && concurrently \"http-server -a localhost -p 1234\" \"open http://localhost:1234/messenger.html\""
   },
   "author": "",
   "license": "ISC",
