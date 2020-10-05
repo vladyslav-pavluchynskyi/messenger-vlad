@@ -1,5 +1,5 @@
-export function removeClick(clicked) {
-    const personals = document.getElementsByClassName(clicked);
+export function removeClick(className) {
+    const personals = document.getElementsByClassName(className);
     [].slice.call(personals).forEach(function (element) {
         element.classList = '';
     })
