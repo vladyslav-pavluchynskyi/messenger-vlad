@@ -1,11 +1,33 @@
-import {createDiv, createSpan, setPhoto} from "./service";
+import {Component} from "./Component";
+import {createDiv, createSpan, setPhoto} from "../service";
+import {getUserInfo} from "../api";
+import AppContext from "./AppContext";
 
-export class PersonalInfo {
-    constructor(userInfo) {
-        this.userInfo = userInfo;
+
+export class UserInfo extends Component {
+    constructor() {
+        super();
+        this.userInfo = null;
+    }
+
+    initialize() {
+        AppContext.events.addListener('personChange', (id) => {
+            this.onChannelChanged(id)
+        });
+    }
+
+    onChannelChanged() {
+        getUserInfo().then(({data: {userInfo}}) => {
+            this.userInfo = userInfo;
+            this.render();
+        })
     }
 
     render() {
+
+        if (!this.userInfo) {
+            return;
+        }
 
         function row(className, rowName, rowInfo) {
             const container = createDiv(className);
@@ -50,5 +72,6 @@ export class PersonalInfo {
         personal.appendChild(topUserInfo);
         personal.appendChild(registerInfo);
         personal.appendChild(personalData);
+
     }
 }

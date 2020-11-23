@@ -251,3 +251,15 @@ export const secondPersonList = [
         ]
     }
 ];
+
+export const p = {
+    First: firstPersonList,
+    Second: secondPersonList
+}
+
+export const dialogs = ['First', 'Second'];
+
+export function getDialogListById(id) {
+    console.log(id);
+    return p[id]
+}

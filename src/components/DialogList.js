@@ -1,29 +1,45 @@
-import {createDiv, createLi, createSpan, removeClick, setPhoto} from "./service";
-import {clicked} from "./constants";
-import {PersonalInfo} from "./PersonalInfo";
-import {Messages} from "./Messages";
+import {Component} from "./Component";
+import {createDiv, createLi, createSpan, setPhoto} from "../service";
+import AppContext from "./AppContext";
+import {getMessageList} from "../api";
+import $ from "jqlite";
 
-export class ChannelItems {
-
-    constructor(personList) {
-        this.personList = personList;
+export class DialogList extends Component {
+    constructor() {
+        super();
+        this.messageList = null;
     }
 
-    renderDialog() {
+    initialize() {
+        AppContext.events.addListener('channelChanged', (id) => { this.onChannelChanged(id) });
+    }
+
+    onChannelChanged(channelId) {
+        getMessageList(...channelId)
+            .then(({data: {messageList}}) => {
+            this.messageList = messageList;
+            this.render();
+        })
+    }
+
+    attachDOMEvents() {
+        const li = $('li.person')
+        li.on('click', function (e){
+            let id = e.path.find(({localName}) => localName==='li').id;
+            AppContext.events.dispatch('personChange', id);
+        });
+    }
+
+    render() {
+        if (!this.messageList) {
+            return;
+        }
+
         const ul = document.createElement('ul');
 
         function renderPerson(element) {
-            const userInfo = {photo: element.photo, name: element.name, ...element.userInfo};
-            const li = createLi();
-            li.onclick = function () {
-                removeClick(clicked);
-                li.classList.add(clicked);
-                const personalInfo = new PersonalInfo(userInfo);
-                personalInfo.render();
-                const messages = new Messages(element.messages, element.photo);
-                messages.render();
-            }
-
+            const li = createLi('person');
+            li.setAttribute('id',  element.name)
             const span = createSpan(`${element.status} photo`);
             setPhoto(span, element.photo);
             const text = createDiv('text');
@@ -55,6 +71,7 @@ export class ChannelItems {
             ul.children[0].click();
         }
 
-        this.personList.forEach(renderPerson);
+        this.messageList.forEach(renderPerson);
+        this.attachDOMEvents();
     }
 }

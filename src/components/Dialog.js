@@ -1,16 +1,37 @@
-import {renderElement, setPhoto} from "./service";
-import {ME, OPPONENT} from "./constants";
+import {Component} from "./Component";
+import {renderElement, setPhoto} from "../service";
+import {ME, OPPONENT} from "../constants";
+import {getDialog} from "../api";
+import AppContext from "./AppContext";
 
-export class Messages {
-    constructor(messages, photo) {
-        this.messages = messages;
-        this.photo = photo;
-        this.myPhoto = 'https://cdn.vortala.com/childsites/uploads/3228/files/rachel-curtis.jpg';
+export class Dialog extends Component {
+
+    constructor() {
+        super();
+        this.dialog = null;
     }
 
+    initialize() {
+        AppContext.events.addListener('personChange', (id) => {
+            this.onChannelChanged(id)
+        });
+    }
+
+    onChannelChanged() {
+        getDialog().then(({data: {dialog}}) => {
+            this.dialog =dialog;
+            this.render();
+        });
+    }
 
     render() {
+        if (!this.dialog) {
+            return;
+        }
+        this.renderMessages();
+    }
 
+    renderMessages() {
         function photoSet(message, photoImgUrl) {
             const photoElement = renderElement('span', 'photo');
             setPhoto(photoElement, photoImgUrl)
@@ -75,10 +96,9 @@ export class Messages {
         const mes = messagesElement[0];
         mes.innerHTML = '';
 
-        const opPhoto = this.photo;
-        const myPhoto = this.myPhoto;
-        this.messages.forEach(function (message) {
-            const messages = renderMessage(message, opPhoto, myPhoto);
+        const {opponentPhoto, photo, messages} = this.dialog;
+        messages.forEach(function (message) {
+            const messages = renderMessage(message, opponentPhoto, photo);
             mes.appendChild(messages);
         });
     }
